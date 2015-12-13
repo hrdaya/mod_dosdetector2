@@ -18,7 +18,7 @@ Release: %{release}
 License: MIT License
 Group:   System Environment/Daemons
 URL:     http://github.com/%{github_user}/%{mod_name}2/tree/master
-Source0: http://github.com/%{github_user}/%{mod_name}2/archive/release-%{mod_version}.tar.gz
+Source0: http://github.com/%{github_user}/%{mod_name}2/archive/v%{mod_version}.tar.gz
 
 BuildRoot:     %{_tmppath}/%{name}-buildroot
 BuildRequires: sed

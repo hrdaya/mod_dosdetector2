@@ -1,4 +1,5 @@
-==== MOD_DOSDETECTOR2 ====
+# MOD_DOSDETECTOR2
+[![GitHub release](https://img.shields.io/badge/pre_release-v0.0.1-blue.svg?style=flat)](https://github.com/hrdaya/mod_dosdetector2/releases)
 
 このソフトウェアは下記のソースを参考に作成されています。
 
@@ -8,11 +9,19 @@
 
 オリジナルのmod_dosdetectorと同じライセンス（mod_dosdetector.cに記載）で公開されます。
 
+## オリジナルのmod_dosdetectorとの違い
+
+- X-Forwarded-Forに複数IPを含む場合の処理を変更
+
+mod_dosdetector-forkの内容の取り込み
+
+- DoSチェックの対象としないアクセスを環境変数で指定できる
+- 不要なサブリクエストの生成処理を取り除くことでパフォーマンスを改善
+- 共有メモリ処理の改善
 
 ## mod_dosdetectorとは？
 mod_dosdetectorはDoS攻撃を検出するためのApacheモジュールです。
-検出結果は環境変数に設定されるため、
-他のモジュールと連携することで柔軟な防御・回避アクションを実行すること可能です。
+検出結果は環境変数に設定されるため、他のモジュールと連携することで柔軟な防御・回避アクションを実行すること可能です。
 
 ## インストール
 
@@ -36,7 +45,7 @@ Apacheを再起動してください。
 ## 設定例
 
 どのような基準でDoS攻撃と見なすかを設定します。
-httpd.confに記述してください
+httpd.confに記述してください。
 
 ```
 # mod_dosdetectorを有効にする
